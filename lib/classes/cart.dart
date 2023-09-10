@@ -378,7 +378,7 @@ class Cart extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      height: 18,
+                      height: 14,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 4, right: 4),
@@ -386,7 +386,7 @@ class Cart extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           SizedBox(
-                            width: 200,
+                            width: 310,
                             height: 50,
                             child: ElevatedButton(
                               onPressed: () {},
@@ -394,7 +394,7 @@ class Cart extends StatelessWidget {
                                 elevation: 0.0,
                                 backgroundColor: Colors.black,
                                 shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(16)),
+                                    borderRadius: BorderRadius.circular(12)),
                               ),
                               child: Row(
                                 mainAxisAlignment:

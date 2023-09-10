@@ -13,13 +13,12 @@ class NavBar extends StatelessWidget {
       child: Drawer(
         width: 300,
         child: Material(
-          color: Colors.black,
+          color: Colors.white,
           child: ListView(
-            shrinkWrap: true,
             padding: const EdgeInsets.symmetric(horizontal: 10),
             children: <Widget>[
               const SizedBox(
-                height: 35,
+                height: 28,
               ),
               buildHeader(
                 urlImage: urlImage,
@@ -28,39 +27,49 @@ class NavBar extends StatelessWidget {
                 onClicked: () {},
               ),
               const SizedBox(
-                height: 20,
+                height: 13,
               ),
               const Divider(
-                color: Colors.white,
+                endIndent: 8,
+                indent: 8,
+                color: Colors.black,
               ),
               const SizedBox(
-                height: 6,
+                height: 10,
               ),
-              buildMenuItem(text: 'Homepage', icon: Icons.home_max_outlined),
+              Container(
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFF5F5F5),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: buildMenuItem(
+                      text: 'Homepage', icon: Icons.home_max_outlined)),
               const SizedBox(
-                height: 6,
+                height: 2,
               ),
               buildMenuItem(
                   text: 'Favorites', icon: Icons.favorite_border_outlined),
               const SizedBox(
-                height: 6,
+                height: 2,
               ),
               buildMenuItem(text: 'My Cart', icon: Icons.shopping_bag_outlined),
               const SizedBox(
-                height: 6,
+                height: 2,
               ),
               buildMenuItem(text: 'About Devs', icon: Icons.developer_mode),
               const SizedBox(
-                height: 340,
+                height: 360,
               ),
               Container(
+                margin: EdgeInsets.symmetric(horizontal: 6),
                 height: 50,
+                width: 11,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     elevation: 0.0,
-                    backgroundColor: const Color(0xFFE8E8E8),
+                    backgroundColor: Colors.black,
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)),
+                        borderRadius: BorderRadius.circular(14)),
                   ),
                   onPressed: () {
                     Navigator.pushReplacement(
@@ -76,7 +85,7 @@ class NavBar extends StatelessWidget {
                       Text(
                         'Switch Account',
                         style: TextStyle(
-                            color: Colors.black,
+                            color: Colors.white,
                             fontWeight: FontWeight.w600,
                             fontSize: 12),
                       ),
@@ -102,39 +111,41 @@ class NavBar extends StatelessWidget {
           highlightColor: Colors.transparent,
           onTap: onClicked,
           child: Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                CircleAvatar(
-                  radius: 30,
-                  backgroundImage: NetworkImage(urlImage),
-                ),
-                const SizedBox(
-                  width: 16,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      name,
-                      style: const TextStyle(
-                          fontWeight: FontWeight.w800,
-                          color: Colors.white,
-                          fontSize: 18),
-                    ),
-                    const SizedBox(
-                      height: 2,
-                    ),
-                    Text(
-                      identity,
-                      style: const TextStyle(
-                          fontWeight: FontWeight.w400,
-                          color: Colors.white,
-                          fontSize: 14),
-                    )
-                  ],
-                )
-              ],
+            child: Padding(
+              padding: const EdgeInsets.only(
+                left: 6,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  CircleAvatar(
+                    radius: 30,
+                    backgroundImage: NetworkImage(urlImage),
+                  ),
+                  const SizedBox(
+                    width: 16,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        name,
+                        style: const TextStyle(
+                            fontWeight: FontWeight.w700,
+                            color: Colors.black,
+                            fontSize: 18),
+                      ),
+                      Text(
+                        identity,
+                        style: const TextStyle(
+                            fontWeight: FontWeight.w400,
+                            color: Colors.black,
+                            fontSize: 14),
+                      )
+                    ],
+                  )
+                ],
+              ),
             ),
           ));
 
@@ -142,19 +153,22 @@ class NavBar extends StatelessWidget {
     required String text,
     required IconData icon,
   }) {
-    final color = Colors.white;
+    final color = Colors.black;
 
-    return ListTile(
-      leading: Icon(
-        icon,
-        color: color,
-        size: 24,
+    return Padding(
+      padding: const EdgeInsets.only(left: 6),
+      child: ListTile(
+        leading: Icon(
+          icon,
+          color: color,
+          size: 26,
+        ),
+        title: Text(
+          text,
+          style: TextStyle(color: color, fontSize: 16),
+        ),
+        onTap: () {},
       ),
-      title: Text(
-        text,
-        style: TextStyle(color: color, fontSize: 14),
-      ),
-      onTap: () {},
     );
   }
 }
