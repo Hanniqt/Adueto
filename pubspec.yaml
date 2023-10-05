@@ -121,6 +121,11 @@ flutter:
   - assets/next.png
   - assets/icontrans.png
   - assets/bag.png
+  - assets/jasper.jpeg
+  - assets/james.jpeg
+  - assets/ed.jpg
+  - assets/ubando.jpg
+  - assets/mary.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

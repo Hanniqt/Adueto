@@ -1,3 +1,5 @@
+import 'package:adeuto/classes/aboutdevs.dart';
+import 'package:adeuto/classes/favorites.dart';
 import 'package:adeuto/classes/loginpage.dart';
 import 'package:adeuto/classes/registerpage.dart';
 

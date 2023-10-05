@@ -1,3 +1,5 @@
+import 'package:adeuto/classes/aboutdevs.dart';
+import 'package:adeuto/classes/loginpage.dart';
 import 'package:adeuto/classes/welcomepage.dart';
 import 'package:flutter/material.dart';
 
@@ -61,7 +63,7 @@ class NavBar extends StatelessWidget {
                 height: 360,
               ),
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 6),
+                margin: const EdgeInsets.symmetric(horizontal: 6),
                 height: 50,
                 width: 11,
                 child: ElevatedButton(
@@ -75,7 +77,7 @@ class NavBar extends StatelessWidget {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const WelcomePage(),
+                        builder: (context) => const LoginPage(),
                       ),
                     );
                   },
